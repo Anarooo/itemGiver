@@ -1,0 +1,176 @@
+--Written by Anaro_Ryker
+--This script is property of Anaro_Ryker. Use of this script without prior permission is strictly prohibited.
+
+--[[Libraries]]--
+local ServerStorage = game:GetService("ServerStorage")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+--[[Variables]]--
+local TeamGiverFolder = ServerStorage.TeamGiver
+local CLASSIFIED = TeamGiverFolder.CLASSIFIED
+local DoD = TeamGiverFolder.DoD
+local DoFI = TeamGiverFolder.DoFI
+local FP = TeamGiverFolder.FP
+local FSB = TeamGiverFolder.FSB
+local TRB = TeamGiverFolder.TRB
+local TSH = TeamGiverFolder.TSH
+local IOC = TeamGiverFolder.IOC
+local ISB = TeamGiverFolder.ISB
+local MTF = TeamGiverFolder.MTF
+local OfEM = TeamGiverFolder.OfEM
+local OfMO = TeamGiverFolder.OfMO
+local OftEB = TeamGiverFolder.OftEB
+local NOBODY = TeamGiverFolder.NOBODY
+local SENTINEL = TeamGiverFolder.SENTINEL
+
+--[[Main Code]]--
+
+for _, Player in ipairs(Players:GetPlayers()) do
+	Player.CharacterAdded:Connect(function()
+		if Player.Team.Name == "CLASSIFIED" then
+			for _, Tool in ipairs(CLASSIFIED:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Department of Development" then
+			for _, Tool in ipairs(DoD:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Department of Foundation Integrity" then
+			for _, Tool in ipairs(DoFI:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Foundation Personnel" then
+			for _, Tool in ipairs(FP:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Foundation Security Branch" then
+			if Player:GetRankInGroup(9456012) <= 30 then
+				for _, Tool in ipairs(FSB.CC:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) == 40 or Player:GetRankInGroup(9456012) == 50 or Player:GetRankInGroup(9456012) == 60 then
+				for _, Tool in ipairs(FSB.SC:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) >= 70 then
+				for _, Tool in ipairs(FSB.MO:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			end
+			for _, Tool in ipairs(FSB.All:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Intelligence Oversight Committee" then
+			for _, Tool in ipairs(IOC:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Internal Security Branch" then
+			for _, Tool in ipairs(ISB:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Mobile Task Force" then
+			if Player:GetRankInGroup(9456012) == 15 then
+				for _, Tool in ipairs(MTF.SENTINEL:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) == 30 then
+				for _, Tool in ipairs(MTF.Delta:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) == 40 then
+				for _, Tool in ipairs(MTF.Alpha:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) == 50 then
+				for _, Tool in ipairs(MTF.Rho:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) == 60 then
+				for _, Tool in ipairs(MTF.Gamma:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9456012) >= 70 then
+				for _, Tool in ipairs(MTF.TFS:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			end
+			for _, Tool in ipairs(MTF.All:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Office for Engineering & Maintinence" then
+			for _, Tool in ipairs(OfEM:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Office for Medical Oversight" then
+			for _, Tool in ipairs(OfMO:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "Office of the Ethics Board" then
+			for _, Tool in ipairs(OftEB:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "The Research Branch" then
+			for _, Tool in ipairs(TRB:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "SENTINEL" then
+			for _, Tool in ipairs(SENTINEL:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "NOBODY" then
+			if Player:GetRankInGroup(9524928) <= 150 then
+				for _, Tool in ipairs(NOBODY.LR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9524928) == 200 or Player:GetRankInGroup(9524928) == 215 then
+				for _, Tool in ipairs(NOBODY.MR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(9524928) >= 230 then
+				for _, Tool in ipairs(NOBODY.HR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			end
+			for _, Tool in ipairs(NOBODY.All:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		elseif Player.Team.Name == "The Serpents Hand" then
+			if Player:GetRankInGroup(3292065) <= 4 then
+				for _, Tool in ipairs(TSH.LR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(3292065) == 5 or Player:GetRankInGroup(9524928) == 6 or Player:GetRankInGroup(9524928) == 7 then
+				for _, Tool in ipairs(TSH.MR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(3292065) == 100 or Player:GetRankInGroup(3292065) == 8 then
+				for _, Tool in ipairs(TSH.HR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			elseif Player:GetRankInGroup(3292065) == 255 then
+				for _, Tool in ipairs(TSH.LDR:GetChildren()) do
+					Tool:Clone().Parent = Player.Backpack
+				end
+			end
+			for _, Tool in ipairs(TSH.All:GetChildren()) do
+				Tool:Clone().Parent = Player.Backpack
+			end
+			--break
+		end	
+	end)
+end
